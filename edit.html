@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>About Us | CHS Tutorial</title>
+</head>
+<body>
+   <ul>
+    <li> <a href="index.html">Tutorial</a></li>
+    <li> <a href="aboutus.html">About Us</a></li>
+    <li> <a href="contactus.html">Contact Us</a></li>
+    <li> <a class="active" href="edit.html">Edit Availability</a></li>
+    <li style="float:right"><a href="https://github.com/pragisharma/chs-tutorial"><img src="gitlogo.png" alt="GitHub" height=30 width=30></a></li>
+   </ul>
+
+   {% extends 'base.html' %}
+
+   {% extends 'base.html' %}
+
+   {% block content %}
+       <h1 style="width: 100%">
+           {% block title %} Edit {{ teacher.firstname }}
+                                  {{ teacher.lastname }}'s Details
+           {% endblock %}
+       </h1>
+       <form method="post">
+           <p>
+               <label for="firstname">First Name</label>
+               <input type="text" name="firstname"
+                      value={{ teacher.firstname }}
+                      placeholder="First name">
+               </input>
+           </p>
+   
+           <p>
+               <label for="lastname">Last Name</label>
+               <input type="text" name="lastname"
+                      value={{ teacher.lastname }}
+                      placeholder="Last name">
+               </input>
+           </p>
+   
+           <p>
+               <label for="email">Email</label>
+               <input type="email" name="email"
+                      value={{ teacher.email }}
+                      placeholder="Student email">
+               </input>
+           </p>
+   
+           <p>
+               <label for="room">Room</label>
+               <input type="number" name="room"
+                      value={{ student.room }}
+                      placeholder="Room">
+               </input>
+           </p>
+   
+           <p>
+           <label for="status">Status</label>
+           <br>
+           <textarea name="status"
+                     placeholder="Status"
+                     >{{ teacher.status }}</textarea>
+           </p>
+           <p>
+               <button type="submit">Submit</button>
+           </p>
+       </form>
+   {% endblock %}
+</body>
+</html>

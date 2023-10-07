@@ -1,49 +1,62 @@
 body   {
-    font-family: sans-serif;
-    margin: 30px;
+  font-family: sans-serif;
+  margin: 30px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to top, rgb(252, 153, 153), rgb(249, 249, 149));
+  background-attachment: fixed;
+
 }
 
 table {
-    margin-top: 30px;
-    width: 100%;
-    border: 1px solid black;
+  margin-top: 30px;
+  width: 100%;
+  border: 1px solid black;
+  border-collapse:separate;
+
 }
 
 th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
+  text-decoration-color: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  border: 1px solid black;
+}
+
+td {
+text-align: left;
+padding: 8px;
+border: 1px solid black;
 }
 
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #333;
 }
 
 li {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+float: left;
+display: block;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
 }
 
 li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+display: block;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
 }
 
 li a:hover:not(.active) {
-  background-color: #d3c2c2;
+background-color: #d3c2c2;
 }
 
 .active {
-  background-color: #04AA6D;
+background-color: #04AA6D;
 }

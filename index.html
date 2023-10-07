@@ -1,56 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <title>CHS Tutorial</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+   {% block content %}
    <ul>
-    <li><a class="active" href="index.html">Tutorial</a></li>
-    <li> <a href="aboutus.html">About Us</a></li>
-    <li><a href="contactus.html">Contact Us</a></li>
-    <li> <a href="edit.html">Edit Availability</a></li>
-    <li style="float:right"><a href="https://github.com/pragisharma/chs-tutorial"><img src="gitlogo.png" alt="GitHub" height=30 width=30></a></li>
+    <li><a class="active" href="{{ url_for('index') }}">Tutorial</a></li>
+    <li><a href="{{ url_for('aboutme') }}">About Me</a></li>
+    <li><a href="{{ url_for('contactus') }}">Contact Us</a></li>
+    <li style="float:right"><a href="https://chs-map.vercel.app/">Tino Map</a></li>
+    <li style="float:right"><a href="https://github.com/pragisharma/chs-tutorial"><img src="{{ url_for('static', filename='gitlogo.png') }}" alt="GitHub" height=30 width=30></a></li>
    </ul>
+    <hr>
 
    <div class="search-bar">
     <h3>Teacher info</h3>
     <p>A table showing teacher's availabilities during tutorial</p>
-    <input type="text" placeholder="Search..">
+    <!-- <input type="text" placeholder="Search.."> -->
    </div>
 
-   <div>
-    <table>
-        <tr>
-            <th style="color:rgba(0, 0, 0, 0.401);">Teacher</th>
-            <th style="color:rgba(0, 0, 0, 0.401);">Subject</th>
-            <th style="color:rgba(0, 0, 0, 0.401);">Room #</th>
-            <th style="color:rgba(0, 0, 0, 0.401);">Availability</th>
-        </tr>
-
-        <tr>
-            <th>Ted McLeod</th>
-            <th>Java, APCS</th>
-            <th>314</th>
-            <th>Open</th>
-        </tr>
-
-        <tr>
-            <th>Stacy Jaehnig</th>
-            <th>PCH, Calc BC</th>
-            <th>405</th>
-            <th>Closed</th>
-        </tr>
-
-        <tr>
-            <th>Santa Cruz</th>
-            <th>World History</th>
-            <th>109 </th>
-            <th>Open for students</th>
-        </tr>
-
-    </table>
-  </div>
-</body>
-</html>
+    <h1 class="title">{% block title %} Teachers {% endblock %}</h1>
+    <table class="content">
+        <th>Teacher</th>
+        <th>Room Number</th>
+        <th>Availability</th>
+        {% for class in classes %}
+            <tr class="class">
+                <td>{{ class.teacher}}</th>
+                <td>{{ class.room }}</th>
+                <td>{{ class.status }}</th>
+                <td><a href="{{ url_for('edit', id=class.id) }}">Edit</a></th>
+            </tr>
+            
+        {% endfor %}
+        </table>
+{% endblock %}

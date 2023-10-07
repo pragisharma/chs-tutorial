@@ -7,4 +7,11 @@ This is an organizer for the availability in different rooms during tutorials on
 
 In order to make this app better, we would like to add all the teachers at CHS to our database and make this website available for everyone, rather than just running it locally. We’ll also add a password so that only teachers can edit the availabilities. Along with this, we’ll make the website look better using more CSS. We also probably want to link it to sheets, so teachers can just change it on that instead of on the website.
 
+# resources
+
+* https://www.digitalocean.com/community/tutorials/how-to-use-flask-sqlalchemy-to-interact-with-databases-in-a-flask-application
+* https://www.tinovation.org/resources/backend-basics
+* https://github.com/solunian/chs-map 
+
+
 

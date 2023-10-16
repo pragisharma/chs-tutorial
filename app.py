@@ -30,27 +30,27 @@ def hello_world():
 @app.route('/')
 def index():
     classes = Classes.query.all()
-    return render_template('index.html', classes=classes)
+    return render_template('./templates/index.html', classes=classes)
 
 @app.route('/aboutme/')
 def aboutme():
     classes = Classes.query.all()
-    return render_template('aboutme.html', classes=classes)
+    return render_template('./templates/aboutme.html', classes=classes)
 
 @app.route('/contactus/')
 def contactus():
     classes = Classes.query.all()
-    return render_template('contactus.html', classes=classes)
+    return render_template('./templates/contactus.html', classes=classes)
 
 @app.route('/index/')
 def index2():
     classes = Classes.query.all()
-    return render_template('index.html', classes=classes)
+    return render_template('./templates/index.html', classes=classes)
 
 @app.route('/advisory/')
 def advisory():
     classes = Classes.query.all()
-    return render_template('advisory.html', classes=classes)
+    return render_template('./templates/advisory.html', classes=classes)
 
 
 @app.route('/<id>/edit/', methods=('GET', 'POST'))
